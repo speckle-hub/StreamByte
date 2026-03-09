@@ -21,14 +21,20 @@ export function useCatalog(
     // 1. Determine which addons to use based on section
     let filteredAddons = installedAddons;
     
+    const normalizeUrl = (url: string) => url.replace(/\/$/, '').toLowerCase();
+    
     if (section === 'home' || section === 'movies' || section === 'tv') {
-      filteredAddons = installedAddons.filter(a => GENERAL_ADDONS.includes(a.url));
+      const generalUrls = GENERAL_ADDONS.map(normalizeUrl);
+      filteredAddons = installedAddons.filter(a => generalUrls.includes(normalizeUrl(a.url)));
     } else if (section === 'anime') {
-      filteredAddons = installedAddons.filter(a => ANIME_ADDONS.includes(a.url));
+      const animeUrls = ANIME_ADDONS.map(normalizeUrl);
+      filteredAddons = installedAddons.filter(a => animeUrls.includes(normalizeUrl(a.url)));
     } else if (section === 'adult') {
-      filteredAddons = installedAddons.filter(a => ADULT_ADDONS.includes(a.url));
+      const adultUrls = ADULT_ADDONS.map(normalizeUrl);
+      filteredAddons = installedAddons.filter(a => adultUrls.includes(normalizeUrl(a.url)));
     } else if (section === 'hentai') {
-      filteredAddons = installedAddons.filter(a => HENTAI_ADDONS.includes(a.url));
+      const hentaiUrls = HENTAI_ADDONS.map(normalizeUrl);
+      filteredAddons = installedAddons.filter(a => hentaiUrls.includes(normalizeUrl(a.url)));
     }
 
     // 2. Determine meta type based on section
@@ -37,7 +43,12 @@ export function useCatalog(
     for (const addon of filteredAddons) {
       // 3. Strict catalog filtering
       const catalogs = addon.manifest.catalogs.filter(c => {
-        // If we have a specific metaType (movies/tv/anime), only show that type
+        // For anime section, allow 'series', 'anime', or 'movie' catalogs if they are in the anime addon list
+        if (section === 'anime') {
+          return c.type === 'series' || c.type === 'anime' || c.type === 'movie';
+        }
+        
+        // If we have a specific metaType (movies/tv), only show that type
         if (metaType && c.type !== metaType) return false;
         
         // Ensure home doesn't accidentally show adult content if an addon has both (unlikely but safe)

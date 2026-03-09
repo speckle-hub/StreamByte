@@ -15,8 +15,11 @@ export const GENERAL_ADDONS = [
 ];
 
 export const ANIME_ADDONS = [
+  "https://mediafusion.elfhosted.com/manifest.json",
+  "https://autostreamtest.onrender.com/manifest.json",
+  "https://streamio-hianime.onrender.com/manifest.json",
   "https://animestream-addon.keypop3750.workers.dev/manifest.json",
-  "https://streamvix.hayd.uk/%7B%22tmdbApiKey%22:%22%22,%22mediaFlowProxyUrl%22:%22%22,%22mediaFlowProxyPassword%22:%22%22,%22animeunityEnabled%22:%22on%22,%22animesaturnEnabled%22:%22on%22,%22animeworldEnabled%22:%22on%22%7D/manifest.json"
+  "https://hanime-stremio.fly.dev/manifest.json"
 ];
 
 export const ADULT_ADDONS = [

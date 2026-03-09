@@ -18,20 +18,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     
     const response = await axios.get(decodedUrl, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        'Accept': 'application/json, text/plain, */*',
-        'Accept-Encoding': 'gzip, deflate, br',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'Accept': '*/*',
+        'Accept-Language': 'en-US,en;q=0.9',
       },
-      timeout: 10000, // 10s timeout for serverless stability
-      validateStatus: () => true, // Don't throw on error status codes
+      timeout: 12000, 
+      validateStatus: () => true,
     });
 
-    // Relay the status code and data
+    // Set CORS and Cache headers
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
+
     res.status(response.status).json(response.data);
   } catch (error: any) {
-    console.error('Proxy error:', error.message);
-    res.status(500).json({ 
-      error: 'Failed to fetch from addon',
+    console.error(`Proxy error for ${url}:`, error.message);
+    res.status(502).json({ 
+      error: 'Bad Gateway - Addon unreachable',
       message: error.message 
     });
   }

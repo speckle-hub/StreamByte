@@ -102,11 +102,15 @@ const MotionPage: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   </motion.div>
 );
 
+import { SettingsProvider } from './context/SettingsContext';
+
 const App: React.FC = () => {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <SettingsProvider>
+      <Router>
+        <AppContent />
+      </Router>
+    </SettingsProvider>
   );
 };
 
