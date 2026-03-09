@@ -6,6 +6,10 @@ import AgeVerificationModal from './components/modals/AgeVerificationModal';
 
 // Lazy load pages
 const HomePage = lazy(() => import('./pages/HomePage'));
+const MoviesPage = lazy(() => import('./pages/MoviesPage'));
+const AnimePage = lazy(() => import('./pages/AnimePage'));
+const AdultPage = lazy(() => import('./pages/AdultPage'));
+const HentaiPage = lazy(() => import('./pages/HentaiPage'));
 const DetailPage = lazy(() => import('./pages/DetailPage'));
 const SearchPage = lazy(() => import('./pages/SearchPage'));
 const VideoPlayerPage = lazy(() => import('./pages/VideoPlayerPage'));
@@ -58,10 +62,11 @@ const AppContent: React.FC = () => {
           <Suspense fallback={<RouteLoader />}>
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<MotionPage><HomePage installedAddons={installedAddons as any} /></MotionPage>} />
-              <Route path="/movies" element={<MotionPage><HomePage installedAddons={installedAddons as any} /></MotionPage>} />
+              <Route path="/movies" element={<MotionPage><MoviesPage installedAddons={installedAddons as any} /></MotionPage>} />
               <Route path="/tv" element={<MotionPage><HomePage installedAddons={installedAddons as any} /></MotionPage>} />
-              <Route path="/anime" element={<MotionPage><HomePage installedAddons={installedAddons as any} /></MotionPage>} />
-              <Route path="/adult" element={<MotionPage><HomePage installedAddons={installedAddons as any} /></MotionPage>} />
+              <Route path="/anime" element={<MotionPage><AnimePage installedAddons={installedAddons as any} /></MotionPage>} />
+              <Route path="/adult" element={<MotionPage><AdultPage installedAddons={installedAddons as any} /></MotionPage>} />
+              <Route path="/hentai" element={<MotionPage><HentaiPage installedAddons={installedAddons as any} /></MotionPage>} />
               <Route path="/search" element={<MotionPage><SearchPage installedAddons={installedAddons as any} /></MotionPage>} />
               <Route path="/detail/:type/:id" element={<MotionPage><DetailPage installedAddons={installedAddons as any} /></MotionPage>} />
               <Route path="/player/:type/:id/:url/:title" element={<MotionPage><VideoPlayerPage installedAddons={installedAddons as any} /></MotionPage>} />

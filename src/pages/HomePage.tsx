@@ -18,16 +18,17 @@ const HomePage: React.FC<HomePageProps> = ({ installedAddons }) => {
   const { history } = useHistory();
   const { favorites } = useFavorites();
   
-  const getCatalogType = () => {
-    if (location.pathname === '/movies') return 'movie';
-    if (location.pathname === '/tv') return 'series';
-    if (location.pathname === '/anime') return 'series';
-    if (location.pathname === '/adult') return 'movie';
-    return undefined;
+  const getSection = (): 'home' | 'movies' | 'tv' | 'anime' | 'adult' | 'hentai' => {
+    if (location.pathname === '/movies') return 'movies';
+    if (location.pathname === '/tv') return 'tv';
+    if (location.pathname === '/anime') return 'anime';
+    if (location.pathname === '/adult') return 'adult';
+    if (location.pathname === '/hentai') return 'hentai';
+    return 'home';
   };
 
-  const type = getCatalogType();
-  const { items, isLoading } = useCatalog(installedAddons, type);
+  const section = getSection();
+  const { items, isLoading } = useCatalog(installedAddons, section);
 
   const allMetas = Object.values(items).flat() as MetaPreview[];
   const heroMeta = allMetas[0];

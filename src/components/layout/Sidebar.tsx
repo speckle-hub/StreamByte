@@ -1,17 +1,22 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Film, Tv, MonitorPlay, ShieldAlert, Settings as SettingsIcon, MonitorPlay as LogoIcon } from 'lucide-react';
+import { useSettings } from '../../hooks/useSettings';
+import { Film, Tv, MonitorPlay, ShieldAlert, Settings as SettingsIcon, MonitorPlay as LogoIcon, Ghost } from 'lucide-react';
 
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { settings } = useSettings();
 
   const menuItems = [
     { id: 'home', label: 'Home', icon: <Film size={20} />, path: '/' },
     { id: 'movies', label: 'Movies', icon: <Film size={20} />, path: '/movies' },
     { id: 'tv', label: 'TV Shows', icon: <Tv size={20} />, path: '/tv' },
     { id: 'anime', label: 'Anime', icon: <MonitorPlay size={20} />, path: '/anime' },
-    { id: 'adult', label: '18+', icon: <ShieldAlert size={20} />, path: '/adult' },
+    ...(settings.isVerified18 ? [
+      { id: 'adult', label: '18+', icon: <ShieldAlert size={20} />, path: '/adult' },
+      { id: 'hentai', label: 'Hentai', icon: <Ghost size={20} />, path: '/hentai' }
+    ] : [])
   ];
 
   return (
