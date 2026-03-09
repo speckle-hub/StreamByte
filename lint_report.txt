@@ -1,0 +1,289 @@
+﻿
+> streambyte@0.0.0 lint
+> eslint .
+
+
+C:\Users\my\StreamByte\api\proxy.ts
+  34:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\my\StreamByte\server\proxy.ts
+  27:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\my\StreamByte\src\App.tsx
+  34:9    error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\my\StreamByte\src\App.tsx:34:9
+  32 |     if (restrictedPaths.includes(location.pathname)) {
+  33 |       if (!settings.isVerified18) {
+> 34 |         setShowAgeGate(true);
+     |         ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  35 |       }
+  36 |     } else {
+  37 |       setShowAgeGate(false);  react-hooks/set-state-in-effect
+  65:98   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  66:106  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  67:100  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  68:104  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  69:104  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  70:106  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  71:106  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  72:116  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  73:133  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  75:98   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+
+C:\Users\my\StreamByte\src\context\SettingsContext.tsx
+  55:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\my\StreamByte\src\hooks\useAddons.ts
+  29:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\my\StreamByte\src\hooks\useCatalog.ts
+  74:18  error  'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+  85:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\my\StreamByte\src\hooks\useCatalog.ts:85:5
+  83 |
+  84 |   useEffect(() => {
+> 85 |     fetchHomeContent();
+     |     ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  86 |   }, [fetchHomeContent, section]);
+  87 |
+  88 |   return { items, isLoading, refresh: fetchHomeContent };  react-hooks/set-state-in-effect
+
+C:\Users\my\StreamByte\src\pages\DetailPage.tsx
+   17:36  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+   24:58  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+   36:11  error    Error: Cannot access variable before it is declared
+
+`fetchStreams` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\Users\my\StreamByte\src\pages\DetailPage.tsx:36:11
+  34 |         setMeta(result.meta);
+  35 |         if (type === 'movie') {
+> 36 |           fetchStreams(type, id);
+     |           ^^^^^^^^^^^^ `fetchStreams` accessed before it is declared
+  37 |         } else if (type === 'series' && result.meta.videos && result.meta.videos.length > 0) {
+  38 |           // Default to first available episode
+  39 |           const firstEp = result.meta.videos[0];
+
+C:\Users\my\StreamByte\src\pages\DetailPage.tsx:51:3
+  49 |   }, [type, id, installedAddons]);
+  50 |
+> 51 |   const fetchStreams = async (streamType: string, streamId: string) => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 52 |     setFetchingStreams(true);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 53 |     setStreams([]);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 54 |     const results = await StreamService.getStreams(installedAddons, streamType, streamId);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 55 |     setStreams(results);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 56 |     setFetchingStreams(false);
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 57 |   };
+     | ^^^^^ `fetchStreams` is declared here
+  58 |
+  59 |   const handleEpisodeSelect = (ep: any) => {
+  60 |     setSelectedEpisode(ep);  react-hooks/immutability
+   49:6   warning  React Hook useEffect has a missing dependency: 'fetchStreams'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/exhaustive-deps
+   59:36  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+   79:29  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+   86:19  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+   87:17  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+   87:25  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+  219:48  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+  311:50  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+
+C:\Users\my\StreamByte\src\pages\SearchPage.tsx
+  56:55  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\my\StreamByte\src\pages\SettingsPage.tsx
+  120:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\my\StreamByte\src\pages\SettingsPage.tsx:120:14
+  118 |
+  119 |           <div className="space-y-6">
+> 120 |             <Toggle 
+      |              ^^^^^^ This component is created during render
+  121 |               label="Autoplay Next Episode"
+  122 |               value={settings.autoplay}
+  123 |               onChange={(v) => updateSettings({ autoplay: v })}
+
+C:\Users\my\StreamByte\src\pages\SettingsPage.tsx:17:18
+  15 |   };
+  16 |
+> 17 |   const Toggle = ({ label, value, onChange, description }: { label: string, value: boolean, onChange: (v: boolean) => void, description?: string }) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |     <div className="flex items-center justify-between p-6 bg-black/40 rounded-2xl border border-white/5">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 19 |       <div>
+     ΓÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |   );
+     | ^^^^ The component is created during render here
+  31 |
+  32 |   const Select = ({ label, value, options, onChange }: { label: string, value: string, options: string[], onChange: (v: string) => void }) => (
+  33 |     <div className="flex flex-col gap-2">                           react-hooks/static-components
+  128:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\my\StreamByte\src\pages\SettingsPage.tsx:128:16
+  126 |             
+  127 |             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+> 128 |               <Select 
+      |                ^^^^^^ This component is created during render
+  129 |                 label="Preferred Quality"
+  130 |                 value={settings.defaultQuality}
+  131 |                 options={['4K', '1080p', '720p', '480p']}
+
+C:\Users\my\StreamByte\src\pages\SettingsPage.tsx:32:18
+  30 |   );
+  31 |
+> 32 |   const Select = ({ label, value, options, onChange }: { label: string, value: string, options: string[], onChange: (v: string) => void }) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |     <div className="flex flex-col gap-2">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |       <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-2">{label}</label>
+     ΓÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |   );
+     | ^^^^ The component is created during render here
+  44 |
+  45 |   return (
+  46 |     <div className="flex-1 overflow-y-auto bg-[#0f0f10] text-white p-8 md:p-16 no-scrollbar pb-32">                                                                                                                                                                                                                                             react-hooks/static-components
+  134:16  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\my\StreamByte\src\pages\SettingsPage.tsx:134:16
+  132 |                 onChange={(v) => updateSettings({ defaultQuality: v })}
+  133 |               />
+> 134 |               <Select 
+      |                ^^^^^^ This component is created during render
+  135 |                 label="Default Subtitles"
+  136 |                 value={settings.defaultSubtitles}
+  137 |                 options={['None', 'English', 'Spanish', 'French', 'German']}
+
+C:\Users\my\StreamByte\src\pages\SettingsPage.tsx:32:18
+  30 |   );
+  31 |
+> 32 |   const Select = ({ label, value, options, onChange }: { label: string, value: string, options: string[], onChange: (v: string) => void }) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |     <div className="flex flex-col gap-2">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |       <label className="text-xs uppercase tracking-widest font-bold text-gray-500 ml-2">{label}</label>
+     ΓÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 43 |   );
+     | ^^^^ The component is created during render here
+  44 |
+  45 |   return (
+  46 |     <div className="flex-1 overflow-y-auto bg-[#0f0f10] text-white p-8 md:p-16 no-scrollbar pb-32">                                                                                                                                                                                                                react-hooks/static-components
+  157:14  error  Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\my\StreamByte\src\pages\SettingsPage.tsx:157:14
+  155 |
+  156 |           <div className="space-y-4">
+> 157 |             <Toggle 
+      |              ^^^^^^ This component is created during render
+  158 |               label="Enable Adult Content"
+  159 |               value={settings.isAdultContentEnabled}
+  160 |               onChange={(v) => updateSettings({ isAdultContentEnabled: v })}
+
+C:\Users\my\StreamByte\src\pages\SettingsPage.tsx:17:18
+  15 |   };
+  16 |
+> 17 |   const Toggle = ({ label, value, onChange, description }: { label: string, value: boolean, onChange: (v: boolean) => void, description?: string }) => (
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 18 |     <div className="flex items-center justify-between p-6 bg-black/40 rounded-2xl border border-white/5">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 19 |       <div>
+     ΓÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |   );
+     | ^^^^ The component is created during render here
+  31 |
+  32 |   const Select = ({ label, value, options, onChange }: { label: string, value: string, options: string[], onChange: (v: string) => void }) => (
+  33 |     <div className="flex flex-col gap-2">  react-hooks/static-components
+
+C:\Users\my\StreamByte\src\pages\VideoPlayerPage.tsx
+   30:36  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+   31:46  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  113:6   warning  React Hook useEffect has missing dependencies: 'addToHistory' and 'decodedTitle'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react-hooks/exhaustive-deps
+  151:18  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  250:75  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\my\StreamByte\src\pages\VideoPlayerPage.tsx:250:75
+  248 |         <div className="space-y-4">
+  249 |           <div className="flex items-center gap-4">
+> 250 |             <span className="text-xs font-mono text-gray-400">{formatTime(videoRef.current?.currentTime || 0)}</span>
+      |                                                                           ^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  251 |             <input 
+  252 |               type="range" 
+  253 |               min="0"                     react-hooks/refs
+  250:75  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\my\StreamByte\src\pages\VideoPlayerPage.tsx:250:75
+  248 |         <div className="space-y-4">
+  249 |           <div className="flex items-center gap-4">
+> 250 |             <span className="text-xs font-mono text-gray-400">{formatTime(videoRef.current?.currentTime || 0)}</span>
+      |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  251 |             <input 
+  252 |               type="range" 
+  253 |               min="0"        react-hooks/refs
+  250:75  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\Users\my\StreamByte\src\pages\VideoPlayerPage.tsx:250:75
+  248 |         <div className="space-y-4">
+  249 |           <div className="flex items-center gap-4">
+> 250 |             <span className="text-xs font-mono text-gray-400">{formatTime(videoRef.current?.currentTime || 0)}</span>
+      |                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  251 |             <input 
+  252 |               type="range" 
+  253 |               min="0"   react-hooks/refs
+
+C:\Users\my\StreamByte\src\services\catalogService.ts
+   6:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  10:74  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\my\StreamByte\src\services\metaService.ts
+   6:77  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:70  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\my\StreamByte\src\types\stremio.ts
+  51:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Γ£û 45 problems (43 errors, 2 warnings)
+

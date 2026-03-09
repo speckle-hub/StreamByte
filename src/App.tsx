@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
 import AgeVerificationModal from './components/modals/AgeVerificationModal';
+import { SettingsProvider } from './context/SettingsContext';
 
 // Lazy load pages
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -101,8 +102,6 @@ const MotionPage: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     {children}
   </motion.div>
 );
-
-import { SettingsProvider } from './context/SettingsContext';
 
 const App: React.FC = () => {
   return (
