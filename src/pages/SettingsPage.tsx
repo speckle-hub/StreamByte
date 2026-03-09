@@ -3,7 +3,7 @@ import { useSettings } from '../hooks/useSettings';
 import { useHistory } from '../hooks/useHistory';
 import { 
   Key, Shield, HardDrive, Trash2, Save, 
-  PlayCircle, Monitor, Languages, Trash 
+  PlayCircle, Trash 
 } from 'lucide-react';
 
 const SettingsPage: React.FC = () => {

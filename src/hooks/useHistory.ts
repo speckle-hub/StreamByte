@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { HistoryItem } from '../types/stremio';
+import type { HistoryItem } from '../types/stremio';
 
 export function useHistory() {
   const [history, setHistory] = useState<HistoryItem[]>(() => {

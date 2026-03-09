@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MetaPreview } from '../types/stremio';
+import type { MetaPreview } from '../types/stremio';
 
 export function useFavorites() {
   const [favorites, setFavorites] = useState<MetaPreview[]>(() => {

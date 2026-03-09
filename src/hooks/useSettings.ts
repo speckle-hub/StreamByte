@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Settings } from '../types/stremio';
+import type { Settings } from '../types/stremio';
 
 const DEFAULT_SETTINGS: Settings = {
   realDebridKey: '',
